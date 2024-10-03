@@ -1,34 +1,34 @@
 
 /*
 
-  Shape Shifter
+变形器
   =============
-  A canvas experiment by Kenneth Cachia
-  http://www.kennethcachia.com
+肯尼斯·卡奇亚的画布实验
+http://www.kennethcachia.com
 
-  Updated code
+更新的代码
   ------------
-  https://github.com/kennethcachia/Shape-Shifter
+https://github.com/kennethcachia/Shape-Shifter
 
 */
 
 
-var S = {
-  init: function () {
-    var action = window.location.href,
-        i = action.indexOf('?a=');
+定义变量 S = {
+  初始化: 功能 () {
+    定义变量 行为=窗口。位置.href,
+        我=行动。索引关于(？a=');
 
-    S.Drawing.init('.canvas');
-    document.body.classList.add('body--ready');
+南初始化(    S.帆布');
+    document.优等生名单.增加(“车身就绪”);
 
-    if (i !== -1) {
-      S.UI.simulate(decodeURI(action).substring(i + 3));
-    } else {
-      S.UI.simulate('|#countdown 3||某|某|祝|你|生|日|快|乐|#rectangle|');
+    如果 (i !== -1) {
+南用户界面.模仿(德科杜里(行为).子链(我+3));
+    } 其他 {
+      S.模仿(#倒计时3周 辰 祝 你 生 日 快 乐#矩形');
     }
 
-    S.Drawing.loop(function () {
-      S.Shape.render();
+    S.环(功能 () {
+      S.提供；给予();
     });
   }
 };
@@ -122,7 +122,7 @@ S.UI = (function () {
     currentAction = reverse ? max : 1;
     fn(currentAction);
 
-    if (!max || (!reverse && currentAction < max) || (reverse && currentAction > 0)) {
+    if (!max    (!reverse && currentAction < max) || (reverse && currentAction > 0)) {
       interval = setInterval(function () {
         currentAction = reverse ? currentAction - 1 : currentAction + 1;
         fn(currentAction);
@@ -182,7 +182,7 @@ S.UI = (function () {
           break;
 
         case 'circle':
-          value = parseInt(value) || maxShapeSize;
+          value = parseInt(value)    maxShapeSize;
           value = Math.min(value, maxShapeSize);
           S.Shape.switchShape(S.ShapeBuilder.circle(value));
           break;
